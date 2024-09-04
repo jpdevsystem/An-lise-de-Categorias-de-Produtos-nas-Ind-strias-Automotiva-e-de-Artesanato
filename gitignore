@@ -1,0 +1,17 @@
+
+### .gitignore
+
+```plaintext
+# Python
+*.pyc
+__pycache__/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Dados
+data/
+
+# Relatórios
+report/
