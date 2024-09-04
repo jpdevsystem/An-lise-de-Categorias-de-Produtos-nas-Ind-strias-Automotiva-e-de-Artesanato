@@ -1,0 +1,37 @@
+# Relatório de Análise de Categorias de Produtos - Indústrias Automotiva e Artesanato
+
+## 1. Introdução
+Neste relatório, apresentamos uma análise detalhada das categorias de produtos nas indústrias automotiva e de artesanato. O objetivo é identificar padrões, tendências e fornecer recomendações estratégicas para melhorar a competitividade dessas categorias no mercado.
+
+## 2. Metodologia
+Os dados foram analisados utilizando bibliotecas como Pandas para manipulação de dados e Seaborn para a criação de visualizações. A análise foi conduzida em quatro etapas:
+1. Carregamento e inspeção inicial dos dados.
+2. Limpeza dos dados, removendo duplicatas e verificando valores ausentes.
+3. Análise exploratória com criação de novas colunas para categorização.
+4. Geração de gráficos para identificação de padrões e tendências.
+
+## 3. Análise e Resultados
+### 3.1. Quantidade de Categorias por Indústria
+**Descrição:** A distribuição das categorias de produtos entre as indústrias de Artesanato e Automotiva foi visualizada utilizando um gráfico de barras.
+
+**Resultados:** Observou-se uma maior diversidade de categorias na indústria de Artesanato.
+
+### 3.2. Proporção de Categorias Dentro de Cada Indústria
+**Descrição:** Utilizou-se um gráfico de pizza para representar a proporção de categorias dentro de cada indústria.
+
+**Resultados:** A indústria de Artesanato domina em número de categorias, sugerindo maior diversidade.
+
+### 3.3. Distribuição de Produtos nas Categorias
+**Descrição:** Um histograma foi utilizado para visualizar a distribuição dos produtos nas diferentes categorias.
+
+**Resultados:** Algumas categorias, como as relacionadas à fabricação de joias, possuem uma alta concentração de produtos.
+
+## 4. Recomendações
+### 4.1. Diversificação de Categorias na Indústria Automotiva
+**Sugestão:** Considerar a criação ou promoção de categorias de produtos menos representadas para aumentar a diversidade de oferta.
+
+### 4.2. Expansão de Categorias Populares
+**Sugestão:** Expandir as categorias mais populares, como Fabricação de Joias, para aproveitar o potencial de mercado.
+
+## 5. Conclusão
+A análise das categorias de produtos nas indústrias de Artesanato e Automotiva revelou importantes insights que podem guiar a estratégia de negócios. Com base nos dados, recomenda-se focar em categorias menos representadas e explorar o crescimento das categorias populares.
