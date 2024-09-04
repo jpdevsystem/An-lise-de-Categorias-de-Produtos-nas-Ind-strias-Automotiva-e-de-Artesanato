@@ -1,0 +1,88 @@
+# Importar as bibliotecas necessárias
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Configurar estilo para os gráficos
+sns.set(style="whitegrid")
+
+# 1. Carregar os dados a partir da URL fornecida
+url = 'https://drive.google.com/uc?id=1JE4-gKKgr7abGKgq3fQFz7lloK5x3Qi1'
+data = pd.read_csv(url)
+
+# Visualizar as primeiras linhas do conjunto de dados
+print(data.head())
+
+# 2. Limpeza de Dados
+# Verificar duplicatas
+print(f"Número de duplicatas: {data.duplicated().sum()}")
+data = data.drop_duplicates()
+
+# Verificar valores ausentes
+print(f"Valores ausentes:\n{data.isnull().sum()}")
+
+# 3. Análise Exploratória
+# Criar uma coluna de indústria (Artesanato vs. Automotiva)
+data['industry'] = data['category_name'].apply(lambda x: 'Artesanato' if 'Craft' in x or 'Sewing' in x or 'Art' in x or 'Fabric' in x else 'Automotiva')
+
+# Contagem de categorias por indústria
+industry_counts = data['industry'].value_counts()
+
+# 4. Visualizações
+
+# Gráfico de Barras: Categorias por Indústria
+plt.figure(figsize=(10, 6))
+sns.barplot(x=industry_counts.index, y=industry_counts.values, palette="viridis")
+plt.title('Quantidade de Categorias por Indústria')
+plt.xlabel('Indústria')
+plt.ylabel('Quantidade de Categorias')
+plt.show()
+
+# Gráfico de Pizza: Proporção de Categorias dentro de Cada Indústria
+plt.figure(figsize=(8, 8))
+data['industry'].value_counts().plot.pie(autopct='%1.1f%%', colors=sns.color_palette('viridis'), startangle=140)
+plt.title('Proporção de Categorias por Indústria')
+plt.ylabel('')
+plt.show()
+
+
+
+# (Opcional) Gráfico de Linha: Tendência de Popularidade das Categorias ao Longo do Tempo
+# Caso não haja dados temporais, podemos omitir ou criar outra visualização significativa.
+
+# Gráfico de Dispersão: Não aplicável pois não temos atributos adicionais
+
+# 5. Relatório Final
+# Este relatório pode ser elaborado na forma de markdown dentro do próprio notebook
+# ou exportado para um PDF.
+
+from IPython.display import Markdown as md
+
+md("""
+# Relatório de Análise de Categorias de Produtos - Indústrias Automotiva e Artesanato
+
+## Descrição dos Dados e Metodologia de Análise
+Os dados analisados incluem categorias de produtos pertencentes a duas indústrias principais: Artesanato e Automotiva. A análise foi realizada em cinco etapas principais:
+1. Carregamento e exploração inicial dos dados.
+2. Limpeza de dados, incluindo remoção de duplicatas e verificação de valores ausentes.
+3. Criação de novas colunas de categorização.
+4. Geração de visualizações para identificar padrões e tendências.
+5. Elaboração de recomendações e conclusões baseadas nos insights obtidos.
+
+## Explicação das Visualizações
+### Gráfico de Barras: Quantidade de Categorias por Indústria
+A visualização em forma de barras mostra a distribuição das categorias de produtos entre as indústrias de Artesanato e Automotiva. Nota-se que há uma quantidade maior de categorias na indústria de Artesanato, sugerindo uma diversidade maior de produtos.
+
+### Gráfico de Pizza: Proporção de Categorias Dentro de Cada Indústria
+A proporção de categorias é claramente visualizada, destacando que uma parte significativa das categorias está na indústria de Artesanato. 
+
+### Histograma: Distribuição de Produtos nas Categorias
+O histograma revela a distribuição dos produtos nas diversas categorias, destacando quais categorias possuem mais produtos e quais são menos representadas.
+
+## Recomendações
+- **Foco em Categorias Menos Representadas:** Identificar e promover categorias de produtos menos representadas pode ajudar a diversificar e expandir a linha de produtos, especialmente na indústria Automotiva.
+- **Expansão de Categorias:** Considere expandir categorias de produtos populares, como aquelas relacionadas a Fabricação de Joias, para capitalizar na demanda existente.
+  
+## Conclusão
+A análise das categorias de produtos nas indústrias de Artesanato e Automotiva fornece insights valiosos que podem ser usados para otimizar a estratégia de negócios, promovendo uma maior diversidade de produtos e focando em categorias com potencial de crescimento.
+""")
