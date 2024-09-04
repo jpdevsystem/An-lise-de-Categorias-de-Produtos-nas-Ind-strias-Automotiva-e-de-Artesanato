@@ -1,0 +1,15 @@
+# Análise de Categorias de Produtos nas Indústrias Automotiva e de Artesanato
+
+## Descrição
+Este projeto tem como objetivo analisar a distribuição de categorias de produtos nas indústrias automotiva e de artesanato. Através de visualizações de dados e análise exploratória, buscamos identificar padrões e fornecer recomendações estratégicas para melhorar a performance dessas categorias no mercado.
+
+## Estrutura do Projeto
+- `notebook/`: Contém o notebook Jupyter com a análise de dados.
+- `data/`: Inclui o conjunto de dados utilizado no projeto (não incluso no repositório, ver instruções abaixo).
+- `images/`: Contém as visualizações geradas pela análise.
+- `report/`: Relatório final com as conclusões e recomendações.
+
+## Instalação
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/seu-usuario/nome-do-projeto.git
